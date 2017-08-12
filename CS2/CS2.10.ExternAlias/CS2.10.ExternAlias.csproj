@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A78A4C19-6D0E-4C69-9ABF-8848FAE1DD88}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CS2.ExternAlias</RootNamespace>
+    <AssemblyName>CS2.10.ExternAlias</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CS2.10.ExternAliasDllA\CS2.10.ExternAliasDllA.csproj">
+      <Project>{35442E91-2E09-40ED-B3AF-25A6F294CDEF}</Project>
+      <Name>CS2.10.ExternAliasDllA</Name>
+      <Aliases>DllA</Aliases>
+    </ProjectReference>
+    <ProjectReference Include="..\CS2.10.ExternAliasDllB\CS2.10.ExternAliasDllB.csproj">
+      <Project>{9DEE6184-5580-41DF-893F-8EB344B6812B}</Project>
+      <Name>CS2.10.ExternAliasDllB</Name>
+      <Aliases>DllB</Aliases>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
