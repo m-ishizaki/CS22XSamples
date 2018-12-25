@@ -14,7 +14,7 @@ namespace CS2.ExternAlias
         public static void Main(string[] args)
         {
             Console.WriteLine(DllA::CS2.ExternAliasDll.MyClass.Text);   // DllA
-			Console.WriteLine(DllA::CS2.ExternAliasDll.MyClass.Text);   // DllB
+			Console.WriteLine(DllB::CS2.ExternAliasDll.MyClass.Text);   // DllB
 
 			Console.ReadKey();
         }
